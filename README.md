@@ -20,8 +20,12 @@ This is a third-party extension library for the Larvalabs cryptopunks (https://g
 Using these three tools, it becomes easy to build a webform in your app that asks a user for the public address of their cryptopunk, asks them to sign a challenge to prove ownership, and then record the fact that their account indeed has that icon.  Then the icon would be allowed to be used for their account in the app like an Avatar or badge.  
 
 ### How to Use
-var cryptopunk_icons = require('cryptopunk-icons')
 
+npm install cryptopunk-icons
+
+```
+var cryptopunk_icons = require('cryptopunk-icons')
+```
 
 ### Loading Icon Images
 ```
