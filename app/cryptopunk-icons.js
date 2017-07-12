@@ -1,5 +1,4 @@
-
-
+var crypto = require('crypto')
 var eth_utils = require('ethereumjs-util');
 
 
@@ -7,12 +6,10 @@ console.log('loaded cryptopunk-icons library')
 
 
 
-	module.exports = function() {
 
 
+exports.connectToWeb3 = function () {
 
-		function connectToWeb3()
-		{
 
 
 				var Web3 = require('web3');
@@ -37,13 +34,15 @@ console.log('loaded cryptopunk-icons library')
 		}
 
 		//use web3 ethereum light client to return a list of cryptopunks at a public address
-		function getCryptopunksFromPublicAddress(_eth_pub_addr)
+
+		exports.getCryptopunksFromPublicAddress = function (_eth_pub_addr)
 		{
 
 		}
 
 		//use web3 ethereum light client to verify that a cryptopunks is owned by a particular public address
-		function verifyCryptopunkOwnedByPublicAddress(_eth_pub_addr)
+
+		exports.verifyCryptopunkOwnedByPublicAddress = function (_eth_pub_addr)
 		{
 
 		}
@@ -52,10 +51,22 @@ console.log('loaded cryptopunk-icons library')
 
 
 		 //generate a challenge for the user to sign in order to prove ownership of their private key
-		function generateEllipticCurveChallengeDigest(_secure_random_message)
+
+		exports.generateEllipticCurveChallengeDigest = function (_secure_random_message)
 		{
 
-			var new_ec_challenge_digest = eth_utils.hashPersonalMessage(_secure_random_message)
+
+
+			if(typeof _secure_random_message == 'undefined')
+			{
+				var len = 32;
+
+				_secure_random_message = crypto.randomBytes(Math.ceil(len / 2)).toString('hex').slice(0, len);
+			}
+
+			random_message_buffer = Buffer.from(_secure_random_message.toString())
+
+			var new_ec_challenge_digest = eth_utils.hashPersonalMessage(random_message_buffer)
 
 			return new_ec_challenge_digest;
 		}
@@ -63,7 +74,8 @@ console.log('loaded cryptopunk-icons library')
 
 		//This function must be ran locally and offline by the holder of the private key that owns the cryptopunk
 		//This function uses the private kay and random challenge to generate a signature proving ownership of the private key
-		function signEllipticCurveChallenge(_eth_private_key,_challenge_digest)
+
+	 	exports.signEllipticCurveChallenge = function (_eth_private_key,_challenge_digest)
 		{
 
 			var sig = eth_utils.ecsign(_challenge_digest,_eth_private_key)
@@ -75,8 +87,10 @@ console.log('loaded cryptopunk-icons library')
 
 		//use ECDSA just like the official Eth repo uses where secure_random_challenge is a truly random string
 		//If the proper signature response is given for the challenge, that means the signature was created by the owner of the private key for the public key
-		function validateEllipticCurveSignature(_eth_pub_addr,_challenge_digest,_signature_response)
+
+		exports.validateEllipticCurveSignature = function (_eth_pub_addr,_challenge_digest,_signature_response)
 		{
+
 
 			var public_key_from_sig = getPublicKeyFromEllipticCurveSignature(_challenge_digest,_signature_response)
 
@@ -91,7 +105,7 @@ console.log('loaded cryptopunk-icons library')
 			return {valid: address_matches, pub_addr: public_address_from_sig}
 		}
 
-		function getPublicKeyFromEllipticCurveSignature(_challenge_digest,_signature_response)
+		exports.getPublicKeyFromEllipticCurveSignature = function (_challenge_digest,_signature_response)
 		{
 
 
@@ -108,16 +122,13 @@ console.log('loaded cryptopunk-icons library')
 
 
 		//We verify that whoever created the response to the challenge must have ownership of the private key that matches the public address
-		function verifyOwnershipOfEthereumPublicAddress(_eth_pub_addr,_ec_challenge,_ec_response)
+
+		exports.verifyOwnershipOfEthereumPublicAddress = function (_eth_pub_addr,_ec_challenge,_ec_response)
 		{
 
 		}
 
-
-		function getCryptopunkIcon(_icon_id)
+		exports.getCryptopunkIcon = function (_icon_id)
 		{
 			return "https://www.larvalabs.com/cryptopunks/cryptopunk"+_icon_id+".png"
 		}
-
-
-};

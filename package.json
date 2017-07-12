@@ -24,6 +24,7 @@
   "homepage": "https://github.com/admazzola/cryptopunk-icons#readme",
   "dependencies": {
     "chai": "^4.1.0",
+    "crypto": "0.0.3",
     "ethereumjs-util": "^5.1.2",
     "express": "^4.15.3",
     "jasmine-node": "^1.14.5",
