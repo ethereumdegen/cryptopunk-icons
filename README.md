@@ -1,6 +1,6 @@
 
 
-**Cryptopunk-Icons Package**
+# Cryptopunk-Icons Package
 
 This is a third-party extension library for the Larvalabs cryptopunks (https://github.com/larvalabs/cryptopunks) decentralized icons.  This library contains all of the individual icon files and contains functions for:
 
@@ -19,7 +19,7 @@ This is a third-party extension library for the Larvalabs cryptopunks (https://g
 
 Using these three tools, it becomes easy to build a webform in your app that asks a user for the public address of their cryptopunk, asks them to sign a challenge to prove ownership, and then record the fact that their account indeed has that icon.  Then the icon would be allowed to be used for their account in the app like an Avatar or badge.  
 
-# How to Use
+### How to Use
 var cryptopunk_icons = require('cryptopunk-icons')
 
 
@@ -60,11 +60,11 @@ var path = cryptopunk_icons.getCryptopunkIconCentralizedURL(111);
 
 
 
-# Signing the Proof-Of-Key Challenges
+### Signing the Proof-Of-Key Challenges
 I will be building http://ethersign.github.io to help facilitate offline signing of cryptographic challenges.  
 
 
-# Testing with mocha
+### Testing with Mocha
 node app/mocha-server.js
 
 Then, in a different shell
