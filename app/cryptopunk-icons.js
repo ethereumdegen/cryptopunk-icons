@@ -78,9 +78,13 @@ exports.connectToWeb3 = function () {
 	 	exports.signEllipticCurveChallenge = function (_eth_private_key,_challenge_digest)
 		{
 
-			var sig = eth_utils.ecsign(_challenge_digest,_eth_private_key)
+			private_key_buffer =  Buffer.from(_eth_private_key,'hex')
 
-			return sig;
+			var sig = eth_utils.ecsign(_challenge_digest,private_key_buffer)
+
+			var rpc_format_sig = eth_utils.toRpcSig(sig.v,sig.r,sig.s)
+
+			return rpc_format_sig;
 
 		}
 
@@ -88,11 +92,11 @@ exports.connectToWeb3 = function () {
 		//use ECDSA just like the official Eth repo uses where secure_random_challenge is a truly random string
 		//If the proper signature response is given for the challenge, that means the signature was created by the owner of the private key for the public key
 
-		exports.validateEllipticCurveSignature = function (_eth_pub_addr,_challenge_digest,_signature_response)
+		exports.validateEllipticCurveSignature = function (_eth_pub_addr,_challenge_digest,_signature_response_hex)
 		{
 
 
-			var public_key_from_sig = getPublicKeyFromEllipticCurveSignature(_challenge_digest,_signature_response)
+			var public_key_from_sig = getPublicKeyFromEllipticCurveSignature(_challenge_digest,_signature_response_hex)
 
 			//verify that pub address matches pub key from the signature
 
@@ -105,11 +109,11 @@ exports.connectToWeb3 = function () {
 			return {valid: address_matches, pub_addr: public_address_from_sig}
 		}
 
-		exports.getPublicKeyFromEllipticCurveSignature = function (_challenge_digest,_signature_response)
+		exports.getPublicKeyFromEllipticCurveSignature = function (_challenge_digest,_signature_response_hex)
 		{
 
 
-			var vrs_data = eth_utils.fromRpcSig(_signature_response)
+			var vrs_data = eth_utils.fromRpcSig(_signature_response_hex)
 
 			var public_key_from_sig = eth_utils.ecrecover(_challenge_digest,vrs_data.v,vrs_data.r,vrs_data.s)
 
@@ -117,8 +121,15 @@ exports.connectToWeb3 = function () {
 
 		}
 
+		exports.verifyPublicAddressMatchesPublicKey = function (_eth_pub_addr,_eth_pub_key)
+		{
+			var address_at_pub_key = eth_utils.publicToAddress(_eth_pub_key);
+
+			var address_at_pub_key_hex = eth_utils.addHexPrefix(address_at_pub_key.toString('hex'));
 
 
+			return (address_at_pub_key_hex.toLowerCase() === _eth_pub_addr.toLowerCase())
+		}
 
 
 		//We verify that whoever created the response to the challenge must have ownership of the private key that matches the public address
