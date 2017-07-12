@@ -2,7 +2,7 @@
   "name": "cryptopunk-icons",
   "version": "1.0.0",
   "description": "A package that uses Web3 to load the image files for cryptopunks",
-  "main": "cryptopunk-icon.js",
+  "main": "cryptopunk-icons.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
