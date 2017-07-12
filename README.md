@@ -8,7 +8,7 @@ This is a third-party extension library for the Larvalabs cryptopunks decentrali
 
  2. Identifying the cryptopunks owned by a particular Ethereum address.
 
- 3. Proving that a particular person owns a particular cryptopunk.  This is done by:
+ 3. Proving that a particular person owns a particular cryptopunk.  This is done using proof-of-key signatures by:
 
     a. Generating and storing a random message that is used to build a cryptographic challenge which is given to the person. (generateEllipticCurveChallengeDigest)
 
@@ -16,6 +16,8 @@ This is a third-party extension library for the Larvalabs cryptopunks decentrali
 
     c. Checking that the signature is indeed valid for that challenge by extracting the public key from the signature.   (validateEllipticCurveSignature)
 
+
+Using these three tools, it becomes easy to build a webform in your app that asks a user for the public address of their cryptopunk, asks them to sign a challenge to prove ownership, and then record the fact that their account indeed has that icon.  Then the icon would be allowed to be used for their account in the app like an Avatar or badge.  
 
 # How to Use
 var cryptopunk_icons = require('cryptopunk-icons')
@@ -56,6 +58,10 @@ var path = cryptopunk_icons.getCryptopunkIconCentralizedURL(111);
  *https://www.larvalabs.com/cryptopunks/cryptopunk111.png*
 
 
+
+
+# Signing the Proof-Of-Key Challenges
+I will be building http://ethersign.github.io to help facilitate offline signing of cryptographic challenges.  
 
 
 # Testing with mocha
