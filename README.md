@@ -6,7 +6,7 @@ This is a third-party extension library for the Larvalabs cryptopunks decentrali
 
  1. Fetching local and web-based image files of the punk icons.
 
- 2. Identifying the cryptopunks owned by a particular Ethereum address.
+ 2. Identifying the cryptopunks owned by a particular Ethereum address. (STILL WIP)
 
  3. Proving that a particular person owns a particular cryptopunk.  This is done using proof-of-key signatures by:
 
