@@ -71,6 +71,16 @@ console.log('loaded cryptopunk-icons library')
 
 		}
 
+		exports.getRandomCryptopunkAtPublicAddress = function (_eth_pub_addr)
+		{
+
+		}
+
+		exports.getFirstCryptopunkAtPublicAddress = function (_eth_pub_addr)
+		{
+
+		}
+
 
 		 //generate a challenge for the user to sign in order to prove ownership of their private key
 

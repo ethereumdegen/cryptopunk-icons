@@ -1,8 +1,21 @@
 
-This is a helper library for https://github.com/larvalabs/cryptopunks
 
+**Cryptopunk-Icons Package**
 
-**WORK IN PROGRESS**
+This is a third-party extension library for the Larvalabs cryptopunks decentralized icons.  This library contains all of the individual icon files and contains functions for:
+
+ 1. Fetching local and web-based image files of the punk icons.
+
+ 2. Identifying the cryptopunks owned by a particular Ethereum address.
+
+ 3. Proving that a particular person owns a particular cryptopunk.  This is done by:
+
+  a. Generating and storing a random message that is used to build a cryptographic challenge which is given to the person. (generateEllipticCurveChallengeDigest)
+
+  b. The person uses their private key to generate a signature of the challenge and they give it back to your Node app. (signEllipticCurveChallenge)
+
+  c. Checking that the signature is indeed valid for that challenge by extracting the public key from the signature.   (validateEllipticCurveSignature)
+
 
 # How to Use
 var cryptopunk_icons = require('cryptopunk-icons')
