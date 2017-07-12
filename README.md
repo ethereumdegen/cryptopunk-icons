@@ -2,7 +2,7 @@
 
 **Cryptopunk-Icons Package**
 
-This is a third-party extension library for the Larvalabs cryptopunks decentralized icons.  This library contains all of the individual icon files and contains functions for:
+This is a third-party extension library for the Larvalabs cryptopunks (https://github.com/larvalabs/cryptopunks) decentralized icons.  This library contains all of the individual icon files and contains functions for:
 
  1. Fetching local and web-based image files of the punk icons.
 
