@@ -93,16 +93,7 @@
 			var crypto = require("crypto");
 			var eccrypto = require("eccrypto");
 
-			if(typeof _secure_random_challenge == 'undefined')
-			{
-				_secure_random_challenge = crypto.randomBytes(32);
-			}
-
-
-		//	var str = "message to sign";
-			// Always hash you message to sign!
-			var challenge_digest = crypto.createHash("sha256").update(_secure_random_challenge).digest();
-
+	 
 
 			  eccrypto.verify(_eth_pub_key, _challenge_digest, _signature_response).then(function() {
 			    console.log("Signature is OK");
