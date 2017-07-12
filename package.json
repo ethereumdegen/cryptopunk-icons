@@ -1,0 +1,25 @@
+{
+  "name": "cryptopunk-icons",
+  "version": "1.0.0",
+  "description": "A package that uses Web3 to load the image files for cryptopunks",
+  "main": "cryptopunk-icon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admazzola/cryptopunk-icons.git"
+  },
+  "keywords": [
+    "cryptopunk",
+    "icon",
+    "web3",
+    "ethereum"
+  ],
+  "author": "admazzola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/admazzola/cryptopunk-icons/issues"
+  },
+  "homepage": "https://github.com/admazzola/cryptopunk-icons#readme"
+}
