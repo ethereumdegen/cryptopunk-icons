@@ -154,9 +154,35 @@ console.log('loaded cryptopunk-icons library')
 		}
 
 
-
-
-		exports.getCryptopunkIcon = function (_icon_id)
+		exports.fixCryptopunkId = function (_icon_id)
 		{
+			while(_icon_id.length < 3)
+			{
+				_icon_id = "0" + _icon_id;
+			}
+
+			return _icon_id;
+		}
+
+		exports.getCryptopunkIconLocalImagePath = function (_icon_id)
+		{
+			_icon_id = exports.fixCryptopunkId(_icon_id)
+
+
+			var fs = require('fs');
+			var path = require('path');
+
+
+			var assets_folder = path.join(path.dirname(fs.realpathSync(__filename)), '../app/assets');
+			var icon_file_path =  (assets_folder + '/punk'+_icon_id+'.png');
+			//var icon_file = fs.readFileSync(icon_file_path);
+
+			return icon_file_path;
+		}
+
+		exports.getCryptopunkIconCentralizedURL = function (_icon_id)
+		{
+			_icon_id = exports.fixCryptopunkId(_icon_id)
+
 			return "https://www.larvalabs.com/cryptopunks/cryptopunk"+_icon_id+".png"
 		}

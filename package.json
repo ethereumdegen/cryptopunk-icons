@@ -30,8 +30,10 @@
     "ethjs-provider-http": "^0.1.6",
     "ethjs-query": "^0.2.6",
     "express": "^4.15.3",
+    "fs": "0.0.1-security",
     "jasmine-node": "^1.14.5",
     "mocha": "^3.4.2",
+    "path": "^0.12.7",
     "request": "^2.81.0"
   }
 }

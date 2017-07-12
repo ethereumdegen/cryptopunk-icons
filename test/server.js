@@ -61,6 +61,23 @@ describe("Cryptopunk Icons API", function() {
 
         });
 
+        it("return file path of punk", function() {
+
+          var path = cryptopunk_icons.getCryptopunkIconLocalImagePath(111);
+
+            console.log('path of sample local punk image')
+            console.log(path)
+
+          expect(typeof path).to.equal('string'); //succeeds?
+        });
+
+        it("return file url of punk", function() {
+
+          var path = cryptopunk_icons.getCryptopunkIconCentralizedURL(111);
+          expect(path).to.equal('https://www.larvalabs.com/cryptopunks/cryptopunk111.png'); //succeeds?
+
+        });
+
 
 
   });
