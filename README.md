@@ -11,6 +11,7 @@ var cryptopunk_icons = require('cryptopunk-icons')
 ### Loading Icon Images
 ```
 function getCryptopunkIconLocalImagePath(_punk_icon_id)
+```
 
 **Example Use**
 
@@ -20,10 +21,11 @@ var path = cryptopunk_icons.getCryptopunkIconLocalImagePath(111);
 
  */home/andy/dev/cryptopunk-icons/app/assets/punk111.png*
 
-```
+
 
 ```
 function getCryptopunkIconCentralizedURL(_punk_icon_id)
+```
 
 **Example Use**
 
@@ -33,7 +35,7 @@ var path = cryptopunk_icons.getCryptopunkIconCentralizedURL(111);
 
  */home/andy/dev/cryptopunk-icons/app/assets/punk111.png*
 
-```
+
 
 
 # Testing with mocha
