@@ -7,26 +7,34 @@
 		 console.log('booting')
 
 
-	var Web3 = require('web3');
-  var web3 = new Web3();
-  web3.setProvider(new web3.providers.HttpProvider());
-
-	 var coinbase = web3.eth.coinbase;
-
-
-	 console.log(coinbase)
-
-
-	var cryptopunks_contract_address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
-
-	var market_abi = "";//read from file
-
 
 
 
 
 	module.exports = function() {
 
+
+
+		function connectToWeb3()
+		{
+
+
+				var Web3 = require('web3');
+			  var web3 = new Web3();
+			  web3.setProvider(new web3.providers.HttpProvider());
+
+				 var coinbase = web3.eth.coinbase;
+
+
+				 console.log(coinbase)
+
+
+				var cryptopunks_contract_address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+
+				var market_abi = "";//read from file
+
+
+		}
 
 		//use web3 ethereum light client to return a list of cryptopunks at a public address
 		function getCryptopunksFromPublicAddress(_eth_pub_addr)
@@ -93,7 +101,7 @@
 			var crypto = require("crypto");
 			var eccrypto = require("eccrypto");
 
-	 
+
 
 			  eccrypto.verify(_eth_pub_key, _challenge_digest, _signature_response).then(function() {
 			    console.log("Signature is OK");

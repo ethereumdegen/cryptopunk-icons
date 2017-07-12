@@ -1,5 +1,5 @@
 var expect    = require("chai").expect;
-var cryptopunk_icons = require("../cryptopunk-icons");
+var cryptopunk_icons = require("../app/cryptopunk-icons");
 
 describe("Crypto Punk Icons Library", function() {
 
