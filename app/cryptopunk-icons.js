@@ -1,6 +1,6 @@
 var crypto = require('crypto')
 var eth_utils = require('ethereumjs-util');
-
+var Web3 = require('web3');
 
 console.log('loaded cryptopunk-icons library')
 
@@ -8,29 +8,45 @@ console.log('loaded cryptopunk-icons library')
 
 
 
-exports.connectToWeb3 = function () {
+
+		exports.connectToEthereumUsingProvider = function (_web3_provider)
+		{
+
+			const BN = require('bn.js');
+			const HttpProvider = require('ethjs-provider-http');
+
+			if(typeof _web3_provider == 'undefined')
+			{
+				_web3_provider = new HttpProvider('http://localhost:8545')
+			}
+
+			const Eth = require('ethjs-query');
+			const eth = new Eth(_web3_provider);
+
+			return eth;
+
+		}
 
 
+			exports.getSmartContractInfo = function (web3)
+		{
+			console.log('web3')
+			console.log(web3)
+		///  web3.setProvider(new web3.providers.HttpProvider());
 
-				var Web3 = require('web3');
-			  var web3 = new Web3();
+		var web3_eth = web3.eth;
+			console.log('web3_eth')
+			 console.log(web3_eth)
 
-				console.log('web3')
-				console.log(web3)
-			///  web3.setProvider(new web3.providers.HttpProvider());
-
-				 var coinbase = web3.eth.coinbase;
+			 var coinbase = web3.eth.coinbase;
 
 
-				 console.log(coinbase)
+			 console.log(coinbase)
 
 
-				var cryptopunks_contract_address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+			var cryptopunks_contract_address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
 
-				var market_abi = "";//read from file
-
-				return web3;
-
+			var market_abi = "";//read from file
 		}
 
 		//use web3 ethereum light client to return a list of cryptopunks at a public address

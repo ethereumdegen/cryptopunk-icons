@@ -37,12 +37,12 @@ describe("Cryptopunk Icons API", function() {
         });
 
         it("returns web3", function() {
-          request(url, function(error, response, body) {
-            console.log('web3 body is ')
-              console.log(body)
-            expect(body).to.equal("fffgggfff"); //succeeds?
-            done();
-          });
+
+          var punkweb3 = cryptopunk_icons.connectToEthereumUsingProvider()
+
+          expect(typeof punkweb3).to.equal("object"); //succeeds?
+
+
         });
 
 

@@ -1,4 +1,4 @@
- 
+
 var express = require("express");
 var app = express();
 
@@ -10,8 +10,44 @@ app.get("/", function(req, res) {
 });
 
 app.get("/blockchain", function(req, res) {
-    var web3 = cryptopunk_icons.cryptopunk_icons;
-    res.send(web3);
+
+
+    var TestRPC = require("ethereumjs-testrpc");
+
+    var eth = cryptopunk_icons.connectToEthereumUsingProvider(TestRPC.provider());
+
+    console.log('eth')
+
+    console.log(eth)
+
+
+    if( typeof eth != 'undefined')
+    {
+
+      eth.coinbase().then((cb_result) => {
+          var balance = eth.getBalance(cb_result).then((bal_result) => {
+            console.log('found balance of ')
+              console.log(bal_result)
+        });
+
+     }).catch((err) => {
+          console.error('unable to connect and get balance')
+    });
+
+
+      //var coinbase = eth.coinbase;
+    //  var balance = eth.getBalance('0xacbFBdc72626c2264a72a352733ae58244ee3BEf',coinbase);
+  //  var balance = eth.getBalance('0x407d73d8a49eeb85d32cf465507dd71d507100c1', cb);
+
+
+
+        res.send('web3 connected');
+    }else{
+        res.send('web3 not connected - please use metamask or parity');
+    }
+
+
+
 });
 
 
@@ -25,7 +61,7 @@ app.get("/challenge", function(req, res) {
 
   var challenge_digest = cryptopunk_icons.generateEllipticCurveChallengeDigest()
   console.log('challenge_digest')
-  console.log(challenge_digest)
+  console.log(challenge_digest.toString('hex'))
 
 
 
