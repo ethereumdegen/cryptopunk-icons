@@ -10,11 +10,11 @@ This is a third-party extension library for the Larvalabs cryptopunks decentrali
 
  3. Proving that a particular person owns a particular cryptopunk.  This is done by:
 
-  a. Generating and storing a random message that is used to build a cryptographic challenge which is given to the person. (generateEllipticCurveChallengeDigest)
+    a. Generating and storing a random message that is used to build a cryptographic challenge which is given to the person. (generateEllipticCurveChallengeDigest)
 
-  b. The person uses their private key to generate a signature of the challenge and they give it back to your Node app. (signEllipticCurveChallenge)
+    b. The person uses their private key to generate a signature of the challenge and they give it back to your Node app. (signEllipticCurveChallenge)
 
-  c. Checking that the signature is indeed valid for that challenge by extracting the public key from the signature.   (validateEllipticCurveSignature)
+    c. Checking that the signature is indeed valid for that challenge by extracting the public key from the signature.   (validateEllipticCurveSignature)
 
 
 # How to Use
