@@ -4,8 +4,8 @@
   "description": "A package that uses Web3 to load the image files for cryptopunks",
   "main": "cryptopunk-icons.js",
   "scripts": {
-      "test": "./node_modules/.bin/mocha --reporter spec"
-    },
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/admazzola/cryptopunk-icons.git"
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/admazzola/cryptopunk-icons#readme",
   "dependencies": {
     "chai": "^4.1.0",
+    "ethereumjs-util": "^5.1.2",
     "express": "^4.15.3",
     "jasmine-node": "^1.14.5",
     "mocha": "^3.4.2",

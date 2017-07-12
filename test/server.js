@@ -1,5 +1,50 @@
+var expect  = require("chai").expect;
+var request = require("request");
 
-describe("Color Code Converter API", function() {
+describe("Cryptopunk Icons API", function() {
+
+
+  describe("Connects to root", function() {
+
+    var url = "http://localhost:3000/";
+
+
+    it("returns status 200", function() {
+          request(url, function(error, response, body) {
+            expect(response.statusCode).to.equal(200);
+            done();
+          });
+        });
+
+
+
+  });
+
+
+  describe("Connects to web3", function() {
+
+    var url = "http://localhost:3000/blockchain";
+
+
+    it("returns status 200", function() {
+          request(url, function(error, response, body) {
+            expect(response.statusCode).to.equal(200);
+            done();
+          });
+        });
+
+        it("returns web3", function() {
+          request(url, function(error, response, body) {
+            console.log('web3 body is ')
+              console.log(body)
+            expect(body).to.equal("fffgggfff");
+            done();
+          });
+        });
+
+
+
+  });
 
   describe("Generates a cryptographic challenge", function() {
 
@@ -14,7 +59,7 @@ describe("Color Code Converter API", function() {
           });
         });
 
-        it("rreturns a random challenge", function() {
+        it("returns a random challenge", function() {
           request(url, function(error, response, body) {
             expect(body).to.equal("ffffff");
             done();
