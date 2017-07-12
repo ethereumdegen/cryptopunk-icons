@@ -25,6 +25,7 @@
   "dependencies": {
     "chai": "^4.1.0",
     "crypto": "0.0.3",
+    "ether-sign": "^0.1.1",
     "ethereumjs-testrpc": "^4.0.1",
     "ethereumjs-util": "^5.1.2",
     "ethjs-provider-http": "^0.1.6",
