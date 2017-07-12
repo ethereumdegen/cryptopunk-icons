@@ -2,7 +2,7 @@
   "name": "cryptopunk-icons",
   "version": "1.1.0",
   "description": "A package that uses Web3 to load the image files for cryptopunks",
-  "main": "cryptopunk-icons.js",
+  "main": "app/cryptopunk-icons.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },

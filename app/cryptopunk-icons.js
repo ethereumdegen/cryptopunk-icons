@@ -2,11 +2,6 @@ var crypto = require('crypto')
 var eth_utils = require('ethereumjs-util');
 var Web3 = require('web3');
 
-console.log('loaded cryptopunk-icons library')
-
-
-
-
 
 
 		exports.connectToEthereumUsingProvider = function (_web3_provider)
@@ -27,28 +22,7 @@ console.log('loaded cryptopunk-icons library')
 
 		}
 
-
-			exports.getSmartContractInfo = function (web3)
-		{
-			console.log('web3')
-			console.log(web3)
-		///  web3.setProvider(new web3.providers.HttpProvider());
-
-		var web3_eth = web3.eth;
-			console.log('web3_eth')
-			 console.log(web3_eth)
-
-			 var coinbase = web3.eth.coinbase;
-
-
-			 console.log(coinbase)
-
-
-
-			var market_abi = "";//read from file
-		}
-
-
+ 
 
 		//use web3 ethereum light client to verify that a cryptopunks is owned by a particular public address
 
