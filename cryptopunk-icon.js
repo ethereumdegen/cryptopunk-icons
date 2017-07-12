@@ -2,12 +2,12 @@ module.exports = function() {
 
 
 
-	
 
 
-	function getCryptopunkImage(image_id)
+
+	function getCryptopunkIcon(icon_id)
 	{
-		return "https://www.larvalabs.com/cryptopunks/cryptopunk"+image_id+".png"
+		return "https://www.larvalabs.com/cryptopunks/cryptopunk"+icon_id+".png"
 	}
 
 
