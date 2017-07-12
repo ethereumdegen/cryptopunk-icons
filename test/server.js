@@ -38,10 +38,26 @@ describe("Cryptopunk Icons API", function() {
 
         it("returns web3", function() {
 
-          var punkweb3 = cryptopunk_icons.connectToEthereumUsingProvider()
+          var eth_web3 = cryptopunk_icons.connectToEthereumUsingProvider()
 
-          expect(typeof punkweb3).to.equal("object"); //succeeds?
+          expect(typeof eth_web3).to.equal("object"); //succeeds?
 
+
+        });
+
+
+        it("verifies punk owned by public address", function() {
+
+          var eth_web3 = cryptopunk_icons.connectToEthereumUsingProvider()
+
+
+          var test_punk_id = 2;
+          var test_eth_address = "0xacbFBdc72626c2264a72a352733ae58244ee3BEf";
+
+
+          var punk_owned = cryptopunk_icons.verifyCryptopunkOwnedByPublicAddress(eth_web3,test_punk_id,test_eth_address)
+
+          expect(punk_owned).to.equal(false); //succeeds?
 
         });
 

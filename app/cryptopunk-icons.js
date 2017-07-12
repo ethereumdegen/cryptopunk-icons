@@ -44,34 +44,38 @@ console.log('loaded cryptopunk-icons library')
 			 console.log(coinbase)
 
 
-			var cryptopunks_contract_address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
 
 			var market_abi = "";//read from file
 		}
 
-		//use web3 ethereum light client to return a list of cryptopunks at a public address
 
-		exports.getCryptopunksFromPublicAddress = function (_eth_pub_addr)
-		{
-
-		}
 
 		//use web3 ethereum light client to verify that a cryptopunks is owned by a particular public address
 
-		exports.verifyCryptopunkOwnedByPublicAddress = function (_eth_pub_addr)
+		exports.verifyCryptopunkOwnedByPublicAddress = function (_eth, _punk_id,_eth_pub_addr)
 		{
+ 			//IMPLEMENT ME
+
+			var cryptopunks_contract_address = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+
+			var result = _eth.getStorageAt() //?
 
 		}
 
 
+
+		//use web3 ethereum light client to return a list of cryptopunks at a public address
+
+		exports.getCryptopunksAtPublicAddress = function (_eth_pub_addr)
+		{
+
+		}
 
 
 		 //generate a challenge for the user to sign in order to prove ownership of their private key
 
 		exports.generateEllipticCurveChallengeDigest = function (_secure_random_message)
 		{
-
-
 
 			if(typeof _secure_random_message == 'undefined')
 			{
@@ -105,6 +109,18 @@ console.log('loaded cryptopunk-icons library')
 		}
 
 
+		exports.getPublicKeyFromEllipticCurveSignature = function (_challenge_digest,_signature_response_hex)
+		{
+
+
+			var vrs_data = eth_utils.fromRpcSig(_signature_response_hex)
+
+			var public_key_from_sig = eth_utils.ecrecover(_challenge_digest,vrs_data.v,vrs_data.r,vrs_data.s)
+
+			return public_key_from_sig;
+
+		}
+
 		//use ECDSA just like the official Eth repo uses where secure_random_challenge is a truly random string
 		//If the proper signature response is given for the challenge, that means the signature was created by the owner of the private key for the public key
 
@@ -125,17 +141,7 @@ console.log('loaded cryptopunk-icons library')
 			return {valid: address_matches, pub_addr: public_address_from_sig}
 		}
 
-		exports.getPublicKeyFromEllipticCurveSignature = function (_challenge_digest,_signature_response_hex)
-		{
 
-
-			var vrs_data = eth_utils.fromRpcSig(_signature_response_hex)
-
-			var public_key_from_sig = eth_utils.ecrecover(_challenge_digest,vrs_data.v,vrs_data.r,vrs_data.s)
-
-			return public_key_from_sig;
-
-		}
 
 		exports.verifyPublicAddressMatchesPublicKey = function (_eth_pub_addr,_eth_pub_key)
 		{
@@ -148,12 +154,7 @@ console.log('loaded cryptopunk-icons library')
 		}
 
 
-		//We verify that whoever created the response to the challenge must have ownership of the private key that matches the public address
 
-		exports.verifyOwnershipOfEthereumPublicAddress = function (_eth_pub_addr,_ec_challenge,_ec_response)
-		{
-
-		}
 
 		exports.getCryptopunkIcon = function (_icon_id)
 		{
