@@ -50,7 +50,7 @@ describe("Cryptopunk Icons API", function() {
   });
 
 
-  describe("Validates a signed sample cryptographic challeng", function() {
+  describe("Validates a signed sample cryptographic challenge", function() {
 
     var test_eth_private_key = "2c6036ab2f51cb1bfa17a3ffb57abf93a183d9d3887bc9e73cd28d9be57e4d56";
     var test_eth_address = "0xacbFBdc72626c2264a72a352733ae58244ee3BEf";
