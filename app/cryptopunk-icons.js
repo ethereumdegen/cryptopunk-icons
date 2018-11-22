@@ -1,4 +1,4 @@
-var crypto = require('crypto')
+ 
 var eth_utils = require('ethereumjs-util');
 var Web3 = require('web3');
 
