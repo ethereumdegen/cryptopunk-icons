@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/admazzola/cryptopunk-icons#readme",
   "dependencies": {
- 
+
     "ethereumjs-testrpc": "^4.0.1",
     "ethereumjs-util": "^5.1.2",
     "ethjs-provider-http": "^0.1.6",
@@ -33,7 +33,7 @@
     "jasmine-node": "^1.14.5",
     "path": "^0.12.7",
     "request": "^2.81.0",
-    "web3": "^1.0.0-beta.28",
+    "web3": "^1.0.0-beta.28" 
   },
   "devDependencies": {
     "chai": "^4.2.0",
