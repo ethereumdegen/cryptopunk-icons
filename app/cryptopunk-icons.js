@@ -2,6 +2,8 @@ var crypto = require('crypto')
 var eth_utils = require('ethereumjs-util');
 var Web3 = require('web3');
 
+			var fs = require('file-system');
+			var path = require('path');
 
 
 		exports.connectToEthereumUsingProvider = function (_web3_provider)
@@ -73,8 +75,6 @@ var Web3 = require('web3');
 			_icon_id = exports.fixCryptopunkId(_icon_id)
 
 
-			var fs = require('fs');
-			var path = require('path');
 
 
 			var assets_folder = path.join(path.dirname(fs.realpathSync(__filename)), '../app/assets');
