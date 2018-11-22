@@ -1,8 +1,8 @@
 {
   "name": "cryptopunk-icons",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A package that uses Web3 to load the image files for cryptopunks",
-  "main": "/app/cryptopunk-icons.js",
+  "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
@@ -26,15 +26,17 @@
 
     "ethjs-provider-http": "^0.1.6",
     "ethjs-query": "^0.2.6",
-    "express": "^4.15.3",
+
     "file-system": "^2.2.2",
-    "jasmine-node": "^1.14.5",
+
     "path": "^0.12.7",
-    "request": "^2.81.0",
     "web3": "^1.0.0-beta.36"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^3.5.3"
+    "mocha": "^3.5.3",
+    "express": "^4.15.3",
+    "request": "^2.81.0",
+      "jasmine-node": "^1.14.5"
   }
 }

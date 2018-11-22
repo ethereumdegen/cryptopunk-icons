@@ -1,5 +1,4 @@
- 
-var eth_utils = require('ethereumjs-util');
+
 var Web3 = require('web3');
 
 var file = require('file-system');
