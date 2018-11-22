@@ -2,8 +2,9 @@ var crypto = require('crypto')
 var eth_utils = require('ethereumjs-util');
 var Web3 = require('web3');
 
-			var fs = require('file-system');
-			var path = require('path');
+var file = require('file-system');
+var fs = require('fs');
+var path = require('path');
 
 
 		exports.connectToEthereumUsingProvider = function (_web3_provider)
