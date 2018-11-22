@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/admazzola/cryptopunk-icons#readme",
   "dependencies": {
-
-    "ether-sign": "^0.1.1",
+ 
     "ethereumjs-testrpc": "^4.0.1",
     "ethereumjs-util": "^5.1.2",
     "ethjs-provider-http": "^0.1.6",
