@@ -1,6 +1,6 @@
 {
   "name": "cryptopunk-icons",
-  "version": "1.1.4",
+  "version": "1.1.4go",
   "description": "A package that uses Web3 to load the image files for cryptopunks",
   "main": "/app/cryptopunk-icons.js",
   "scripts": {
@@ -24,8 +24,6 @@
   "homepage": "https://github.com/admazzola/cryptopunk-icons#readme",
   "dependencies": {
 
-    "ethereumjs-testrpc": "^4.0.1",
-    "ethereumjs-util": "^5.1.2",
     "ethjs-provider-http": "^0.1.6",
     "ethjs-query": "^0.2.6",
     "express": "^4.15.3",
