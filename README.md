@@ -63,10 +63,7 @@ var path = cryptopunk_icons.getCryptopunkIconCentralizedURL(111);
 
 
 
-
-### Signing the Proof-Of-Key Challenges
-I will be building http://ethersign.github.io to help facilitate offline signing of cryptographic challenges.  
-
+ 
 
 ### Testing with Mocha
 node app/mocha-server.js
